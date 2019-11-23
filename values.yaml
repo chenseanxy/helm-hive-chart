@@ -1,0 +1,27 @@
+
+replicaCount: 1
+image:
+    repository: chenseanxy/hive
+    tag: 3.1.2-hadoop3.1.2
+    pullPolicy: IfNotPresent
+service:
+    type: None
+    portHTTP: 10001
+    portUI: 10002
+    nodePortUI: 30004
+    nodePortHTTP: 30005
+ingress:
+    enabled: false
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+connect:
+    hdfs: 
+        namenode: hadoop-hdfs-nn:9000
+        path: /hive/warehouse
+    mysql:
+        server: mysql:3306
+        username: root
+        password: notproduction
+    

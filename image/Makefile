@@ -2,8 +2,8 @@
 
 # Current apache hive releases: http://hive.apache.org/releases.html
 
-HADOOP_30_VERSION = 2.1.4
-HIVE_VERSION = 2.3.4
+HADOOP_30_VERSION = 3.1.2
+HIVE_VERSION = 3.1.2
 
 DOCKER = docker
 DOCKER_REPO = chenseanxy/hive
@@ -25,7 +25,7 @@ push:
 	$(DOCKER) push $(DOCKER_REPO):$(HIVE_VERSION)-hadoop$(HADOOP_30_VERSION)
 
 ### Fetch binary distribution
-hive-%-bin.tar.gz:
+apache-hive-%-bin.tar.gz:
 	curl -LO http://archive.apache.org/dist/hive/hive-$(HIVE_VERSION)/apache-hive-$(HIVE_VERSION)-bin.tar.gz
 
 ### TODO: Fetch mysql java connector here
@@ -33,4 +33,4 @@ mysql-java-connector.jar:
 	echo "Please download mysql java connector"
 
 # Keep intermediate downloads.
-.PRECIOUS: hive-%-bin.tar.gz
+.PRECIOUS: apache-hive-%-bin.tar.gz
