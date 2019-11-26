@@ -49,6 +49,10 @@ data:
           <name>hive.metastore.schema.verification</name>
           <value>false</value>
       </property>
+      <property>
+          <name>hbase.zookeeper.quorum</name>
+          <value>{{ .Values.connect.hbase.zookeeper }}</value>
+      </property>
     </configuration>
 
   bootstrap.sh: |

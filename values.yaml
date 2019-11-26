@@ -2,7 +2,7 @@
 replicaCount: 1
 image:
     repository: chenseanxy/hive
-    tag: 3.1.2-hadoop3.1.2
+    tag: 3.1.2-hbase2.1.7
     pullPolicy: IfNotPresent
 service:
     type: None
@@ -24,4 +24,6 @@ connect:
         server: mysql:3306
         username: root
         password: notproduction
+    hbase:
+        zookeeper: zookeeper:2181
     
